@@ -1,0 +1,12 @@
+<template name="list-item">
+    <view class="weui-cell" bindtap="click" data-id="{{id}}">
+        <view class="left">
+            <view class="jobName">{{jobName}}-{{address}}</view>
+            <view class="desc"> {{address}}/{{exp}}/{{degree}}</view>
+        </view>
+        <view class="right">
+            <view class="salary">{{salary}}</view>
+            <view class="time">{{time}}</view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,17 @@
+.header{
+    position: relative;
+    background-color: red;
+    height: 300rpx;
+}
+.header .pro{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.weui-media-box__hd_in-appmsg{
+    margin-right: 1.5em;
+}
+.header .weui-media-box__thumb{
+    border-radius: 50%;
+}

@@ -1,0 +1,56 @@
+<import src="../../templates/template" />
+<view class="container {{isMask?'mask':''}}">
+    <view class="header">
+        <view class="filterCity {{status=='1' && isActive?'active':''}}" data-status='1' bindtap="changeStatus">
+            <view class="city">城市筛选</view>
+            <image src="{{status=='1' && isActive?'../../youzan-image/red-up.png':'../../youzan-image/down.png'}}" />
+        </view>
+        <view class="filterJob {{status=='2' && isActive?'active':''}}" data-status='2' bindtap="changeStatus">
+            <view class="job">职位筛选</view>
+            <image src="{{status=='2' && isActive?'../../youzan-image/red-up.png':'../../youzan-image/down.png'}}" />
+        </view>
+        <view class="filterOrder {{status=='3'&& isActive?'active':''}}" data-status='3' bindtap="changeStatus">
+            <view class="order">排序方式</view>
+            <image src="{{status=='3' && isActive?'../../youzan-image/red-up.png':'../../youzan-image/down.png'}}" />
+        </view>
+    </view>
+    <block wx:if="{{isActive==true&&status=='1'}}">
+        <view class="cityContainer">
+            <block wx:for="{{city}}" wx:key="id" wx:for-index="index">
+                <view class="city {{isSelect&&index==curIndex?'select':''}}" data-index="{{index}}" bindtap="select">{{item}}</view>
+            </block>
+        </view>
+    </block>
+    <block wx:if="{{isActive==true&&status=='2'}}">
+        <scroll-view scroll-y="true" class="posContainer">
+            <block wx:for="{{cur}}" data-index='index' wx:for-index='index' wx:key="index">
+                <view class="title">{{item.title}}</view>
+                <view class="poscontent">
+                    <view  wx:for="{{item.types}}" wx:for-item="type" wx:key='id' wx:for-index="{{index}}" data-index="{{index}}">
+                        <view class="tag {{isSelect&&index==curIndex?'select':''}}" data-id="{{id}}" bindtap="multiSelect">{{type}}</view>
+                    </view>
+                </view>
+            </block>
+            <view class="confirm">
+                <button class="weui-btn" type="warn">确认</button>
+            </view>
+        </scroll-view>
+    </block>
+    <block wx:if="{{isActive==true&&status=='3'}}">
+        <view class="orderContainer">
+            <view class="block">智能排序</view>
+            <view class="block">时间排序</view>
+            <view class="block">薪资排序</view>
+        </view>
+    </block>
+    <view class="listContainer"  >
+        <view wx:for="{{jobList}}" wx:key="index" data-index="{{index}}">
+            <template is="list-item" data="{{...item}}" />
+        </view>
+    </view>
+    <view class="search " bindtap="search">
+        <image src="../../youzan-image/search.png" />
+        <text>搜索</text>
+    </view>
+
+</view>

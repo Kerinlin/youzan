@@ -1,0 +1,25 @@
+<import src="../../templates/template" />
+<view class="searchContainer">
+    <view class="search" style="width:{{width}};">
+        <image class="searchImg" src="../../youzan-image/search.png"></image>
+        <input class="searchInput" value="{{inputValue}}" auto-focus bindinput="changeValue" />
+    </view><import src="../../templates/template" />
+    <view class="cancleSearch {{isConfirm?'hide':''}}" bindtap="confirmValue">{{confirm}}</view>
+    <view class="history {{isHide?'hide':''}}">
+        <view class="history-header {{isShow?'':'hide'}}">
+            <view class="title">历史搜索</view>
+            <image class="delectHistory" src="../../youzan-image/delete.png" bindtap="clearStorage"></image>
+        </view>
+        <view class="history-content">
+            <view wx:for="{{sercherStorage}}" wx:key="item.id">
+                <view class="content">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="result {{isCover?'hide':''}}">
+    <view wx:for="{{result}}" wx:key="index" data-index="{{index}}">
+        <template is="list-item" data="{{...item}}" />
+    </view>
+    <!-- <view class="a">hhashchsbhasc</view> -->
+    </view>
+</view>

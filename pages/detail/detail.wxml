@@ -1,0 +1,62 @@
+<import src="../../templates/template" />
+<view class="container">
+    <view class="header">
+        <view class="posName">{{job.jobName}}-{{job.address}}</view>
+        <view class="salary">{{job.salary}}</view>
+        <view class="aed">/{{job.address}}/{{job.exp}}/{{job.deg}}</view>
+        <view class="dec">{{job.shortdec}}</view>
+    </view>
+    <view class="address">
+        <view class="weui-cell weui-cell_access" bindtap="showMap">
+            <view class="weui-cell__hd">
+                <image src="../../youzan-image/pos.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+                <view>{{job.detailAddress}}</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+    </view>
+    <view class="jobdec">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">职位描述</view>
+        </view>
+        <image class="tag" src="../../youzan-image/11.png"></image>
+    </view>
+    <view class="hr">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">职位发布者</view>
+        </view>
+        <image class="avatar" src="../../youzan-image/hr.jpeg"></image>
+        <view class="title">HR姐姐</view>
+        <view class="server">服务小能手</view>
+        <image class="active" src="../../youzan-image/active.png"></image>
+        <view class="activeTitle">最近活跃：1小时前</view>
+        <text decode="{{true}}" class="titleTag">#简历处理快如闪电 #很少回聊天信息　#早上活跃</text>
+    </view>
+    <view class="listContainer">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">相似职位</view>
+        </view>
+        <view wx:for="{{jobList}}" wx:key="index" data-index="{{index}}">
+            <template is="list-item" data="{{...item}}" />
+        </view>
+        <view class="more" bindtap="showMore">
+            <view class="more-dec">查看更多职位</view>
+            <image class="more-dec-img" src="../../youzan-image/right.png"></image>
+        </view>
+    </view>
+    <view class="footer">
+        <text class="support">拉勾网提供技术支持</text>
+        <text class="addProgram">我也要生成企业专属招聘小程序</text>
+    </view>
+    <view class="posControl">
+        <view class="footBar">
+            <image class="share" src="../../youzan-image/share.png"></image>
+            <text class="shareText">分享</text>
+            <image class="save " src="{{isClick?'../../youzan-image/save-s.png':'../../youzan-image/save.png'}}" bindtap="haveSave"></image>
+            <text class="saveText">{{isClick?'已收藏':'收藏'}}</text>
+            <button class="weui-btn" type="warn" bindtap='deliver'>投递简历</button>
+        </view>
+    </view>
+</view>

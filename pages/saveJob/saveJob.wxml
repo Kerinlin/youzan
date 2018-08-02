@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="content" wx:for="{{job}}" wx:key="item.jobid">
+        <image src="../../youzan-image/yz.png"></image>
+        <view class="salary">{{item.salary}}</view>
+        <view class="jobName">{{item.jobName}}-{{item.address}}</view>
+        <view class="company">有赞</view>
+        <view class="dec">{{item.address}} | {{item.exp}} | {{item.degree}}</view>
+        <view class="time">06月08日</view>
+    </view>
+</view>

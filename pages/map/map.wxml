@@ -1,0 +1,7 @@
+<view class="container">
+    <map class="Map" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" controls="{{controls}}" show-location  markers="{{markers}}" bindcontroltap="backToMyposition">
+        <cover-view class="footer">
+            <cover-view class="detail">{{shortAddress}}{{detailAddress}}</cover-view>
+        </cover-view>
+    </map>   
+</view>

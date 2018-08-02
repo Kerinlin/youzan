@@ -1,0 +1,116 @@
+<view class="company">
+    <view class="page-swiper">
+        <swiper class="company-image" indicator-dots="true" indicator-active-color="#ed0000"  circular="true">
+            <block wx:for="{{images}}" wx:for-index="index" wx:key="id">
+                <swiper-item>
+                    <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="company-short-dec">
+        <image class="yz-icon" src="../../youzan-image/yz.png"></image>
+        <text class="company-name">有赞</text>
+        <text class="short-dec">杭州/企业服务,电子商务/上市公司/500-2000人</text>
+    </view>
+    <view class="company-detail">
+        <view class="company-detail-content">
+            <view class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">公司介绍</view>
+            </view>
+            <view class="long-dec {{isFold?'hide':'show'}}">
+                <text class="first-dec">
+                    创业是个失败概率很大的事情，我们很高兴从2012底到现在还活着， 而且还活的很不错。 目前有赞旗下的产品有：有赞微商城、有赞收银、有赞零售、有赞美业、有赞批发、有赞买家版、有赞微小店.
+                </text>
+                <text class="second-dec">
+                    我们认为，相比较业务来说，团队才是公司的核心。有赞没有“员工”只有“小伙伴”，也没有人姓“公”名“司”，我们有一群聪明、有要性、又皮实的伙伴，这才是我们最大的资产。
+                </text>
+                <text class="last-dec">
+                    有赞的小伙伴目前已超过1000人，工程师比例占55%，我们有很浓的工程师氛围，每周都有很多的有意思的分享：有出国旅游的分享、有如何搭讪的分享、有如何装修房子的分享...技术分享更是数不胜数。 我们的工作不是很轻松，但我们的氛围很轻松，很open，公司里随处可见骑着独轮车来回跑的工程师、懒人沙发、午睡吊篮、复古电话亭等等，每个月都有节日、新人表演、拓展、派对等，对我们来说，天天都可以是节日。我们倡导简单直接的沟通方式，希望做一家通透的公司。这里并没有过多的等级划分，你可以随时提出自己的意见和任何人PK。福利方面我们全额缴纳五险一金，每月980元的有赞E卡鼓励大家一起吃喝玩乐。工程师标配MacBookPro、大屏显示器和机械键盘。办公室里常备零食、水果，休息区有电视、游戏机、桌球、乒乓球、四驱赛车、桌游随时供大家放松减压。每天晚下班的打车费报销，每年给你和你的家人提供旅游和体检等等。
+                </text>
+            </view>
+            <image class="arrow" src=" {{isFold?'../../youzan-image/down.png':'../../youzan-image/up.png'}}" bindtap="showAll"></image>
+        </view>
+    </view>
+    <view class="company-product">
+        <view class="company-product-content">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">产品介绍</view>
+        </view>
+        <swiper class="product-image" indicator-active-color="#fff" indicator-dots="true" bindchange="changeDec" current="{{current}}" circular="true">
+            <block wx:for="{{productImg}}" wx:for-index="index" wx:key="id">
+                <swiper-item>
+                    <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="product-dec" data-id="{{current}}">{{name}}</view>
+        </view>
+    </view>
+    <view class="company-develop">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">发展历程</view>
+        </view>
+        <view class="develop-content">
+            <view class="dep-4">
+                <view class="dep-time">2017-04-25</view>
+                <view class="dep-desc">新零售春季沙龙，发布新产品：有赞零售、美业、餐饮、有赞云</view>
+                <image src="../../youzan-image/cir-red.png" class="cir first"></image>
+            </view>
+            <view class="dep-5">
+                <view class="dep-time">2017-05-05</view>
+                <view class="dep-desc">曼哈顿计划启动，有赞开始商业化</view>
+                <view class="weui-media-box__desc">风雨兼程, 责任在肩</view>
+                <image src="../../youzan-image/cir.png" class="cir second"></image>
+            </view>
+            <view class="dep-3">
+                <view class="dep-time">2017-03-18</view>
+                <view class="dep-desc">Move again! 搬进了黄龙万科中心6000方的新家！</view>
+                <view class="weui-media-box__desc">再也不用担心会议室不够啦！楼下就有星巴克和健身房~</view>
+                <image src="../../youzan-image/cir.png" class="cir third"></image>
+            </view>
+        </view>
+        <view class="more" bindtap="showMore">
+            <view class="more-dec">更多历程</view>
+            <image class="more-dec-img" src="../../youzan-image/right.png"></image>           
+        </view>
+    </view>
+    <view class="company-team">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">管理团队</view>
+        </view>
+        <view class="company-team-leader">
+            <view class="header">
+                <view class="avatar"></view>
+                <text class="name">白鸦</text>
+                <text class="dec">创始人兼CEO</text>
+            </view>          
+            <view class="job-exp">
+                <text class="in-company">有赞-原口袋通</text>
+                <text class="in-time">(2012-今)</text>
+                <text class="in-area">地区:浙江,杭州 职位:创始人</text>
+            </view>
+        </view>
+    </view>
+    <view class="company-adress">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">公司地址</view>
+        </view>
+        <block wx:for="{{place}}" wx:key='index'>
+            <view class="weui-media-box weui-media-box_text" bindtap="openMap" data-index="{{index}}">
+                <image class="pos-icon" src="../../youzan-image/pos.png"></image>
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{item.shortAddress}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                <view class="weui-media-box__desc">{{item.detailAddress}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="footer">
+        <text class="support">拉勾网提供技术支持</text>
+        <text class="addProgram" >我也要生成企业专属招聘小程序</text>
+    </view>
+    <view class="share" bindtap="open">
+        <image src="../../youzan-image/share.png"/>
+        <text>分享</text>
+    </view>
+</view>

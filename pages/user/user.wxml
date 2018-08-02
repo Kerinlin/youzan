@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="header">
+        <view url="" class="pro weui-media-box weui-media-box_appmsg" >
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">欧阳铖</view>
+                <view class="weui-media-box__desc">软件工程专业</view>
+            </view>
+            <view class=" weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../youzan-image/myavatar.jpg" />
+            </view>
+        </view>
+    </view>
+    <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+            <view class="weui-cells weui-cells_in-small-appmsg">
+                <navigator url="" class="weui-cell weui-cell_access" >
+                    <view class="weui-cell__hd">
+                        <image src="../../youzan-image/resume.png" style="width: 20px;height: 20px;margin-right: 5px" />
+                    </view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>简历</view>
+                    </view>
+                    <view class="complete weui-cell__ft">完整度：47%</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <navigator url="/pages/deliver/deliver" class="weui-cell weui-cell_access" >
+                    <view class="weui-cell__hd">
+                        <image src="../../youzan-image/record.png" style="width: 20px;height: 20px;margin-right: 5px" />
+                    </view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>投递记录</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <navigator url="/pages/saveJob/saveJob" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__hd">
+                        <image src="../../youzan-image/collect.png" style="width: 20px;height: 20px;margin-right: 5px" />
+                    </view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>职位收藏</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

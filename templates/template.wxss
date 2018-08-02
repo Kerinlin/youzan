@@ -1,0 +1,42 @@
+.weui-cell {
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weui-cell_active {
+    background-color: #fff;
+}
+
+.left {
+    flex: 1;
+}
+
+.jobName {
+    font-size: 15px;
+    color: #000000;
+    font-weight: normal;
+}
+
+.desc {
+    color: #989898;
+    font-size: 13px;
+}
+
+.right {
+    flex: 1;
+}
+
+.salary {
+    text-align: right;
+    color: #f87653;
+    font-size: 15px;
+}
+
+.time {
+    text-align: right;
+    color: #999999;
+    font-size: 13px;
+}
